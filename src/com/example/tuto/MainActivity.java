@@ -6,15 +6,21 @@ import android.view.Menu;
 import android.widget.TextView;
 
 public class MainActivity extends Activity {
-	private TextView coucou = null;
+	private TextView text = null;
+	private String hibou = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         
-        coucou = new TextView(this);
-        coucou.setText("Hello World");
-        setContentView(R.layout.activity_main);
+        hibou = getResources().getString(R.string.hello_world);
+        hibou = hibou.replace("world", "les Zéros ");
+        
+        text = new TextView(this);
+        text.setText(hibou);
+        setContentView(text);
+        
+        //setContentView(R.layout.activity_main);
     }
 
 
